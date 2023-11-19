@@ -1,0 +1,144 @@
+.block-metrics {
+  position: relative;
+  padding-bottom: 140px;
+  z-index: 2;
+}
+
+.block-metrics-bg {
+  position: absolute;
+  bottom: 470px;
+  left: 0;
+  right: 0;
+
+  max-width: 100%;
+  height: auto;
+  margin: auto;
+
+  filter: blur(200px);
+  z-index: 0;
+}
+
+.block-metrics-circle {
+  position: absolute;
+  bottom: -320px;
+  left: 0;
+  right: 0;
+
+  max-width: 100%;
+  height: auto;
+  margin: auto;
+  z-index: 1;
+  
+  stroke-dasharray: 0, 2275;
+  stroke-dashoffset: -995;
+
+  pointer-events: none;
+}
+
+.block-metrics-circle.animation {
+  animation: 4s block-metrics-circle-animate forwards;
+}
+@keyframes block-metrics-circle-animate {
+    to {
+      stroke-dasharray: 2275, 0;
+    }
+}
+
+.metrics-groups {
+  margin-top: 108px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.metrics-group {
+  width: 33%;
+  text-align: center;
+
+  &:not(:last-child) {
+    margin: 0 0 32px;
+  }
+
+  &:nth-child(1), &:nth-child(3) {
+    transform: translateY(140px);
+  }
+
+  &--current {
+    margin: 100px auto;
+  }
+}
+
+.metrics-value {
+  margin: 0 0 8px;
+
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: -0.048em;
+
+  &--current {
+    font-size: 80px;
+  }
+}
+
+.metrics-text {
+  margin: 0;
+
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: -0.02em;
+  opacity: 0.36;  
+
+  &--current {
+    font-size: 32px;
+    opacity: 1;
+  }
+}
+@media (max-width: 576px) {
+
+  .block-metrics {
+    padding-bottom: 0;
+  }
+  .metrics-groups {
+    flex-direction: column;
+    margin-top: 40px;
+  }
+
+  .metrics-group {
+    width: 100%;
+    
+    &:nth-child(1), &:nth-child(3) {
+      transform: translateY(0);
+    }
+
+    
+    &--current {
+      margin: 84px auto 54px;
+    }
+  }
+
+  .metrics-value {
+    font-size: 32px;
+    margin-bottom: 2px;
+
+    &--current {
+      font-size: 40px;
+    }
+  }
+
+  .metrics-text {
+    font-size: 16px;
+  }
+
+  .block-metrics-circle {
+    bottom: -245px;
+    margin: 0 20px;
+    padding: 0 13px;
+    max-width: calc(100% - 40px);
+  }
+  
+  .block-metrics-bg {
+    filter: blur(120px);
+  }
+  
+}

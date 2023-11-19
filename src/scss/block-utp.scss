@@ -1,0 +1,134 @@
+.block-utp--svg-1 .rect-animate  {
+    fill-opacity: 0;
+}
+.block-utp--svg-1.animation .rect-animate {
+    animation: 1s svg-1-rect-animate forwards;
+}
+
+@keyframes svg-1-rect-animate {
+    0% {
+        fill-opacity: 0;
+    }
+
+    100% {
+        fill-opacity: 0.08;
+    }
+}
+
+.block-utp--svg-2 {
+
+    .rect-animate {
+        transform: translateX(-24px);
+        fill-opacity: 0.12;
+    }
+
+    .icon-animate {
+        transform: translateX(-24px);
+        fill: #fff;
+    }
+
+    .linear-stop-animate--0 {
+        stop-color: rgba(255,255,255,0.12);
+    }
+    
+    .linear-stop-animate--1 {
+        stop-color: rgba(255,255,255,0.12);
+    }
+
+    &.animation {
+        .rect-animate {
+            animation: 2s svg-2-rect-animate forwards;
+            animation-delay: .5s;
+        }
+        .icon-animate {
+            animation: 2s svg-2-icon-animate forwards;
+            animation-delay: .5s;
+        }
+
+        .linear-stop-animate--0 {
+            animation: 2s svg-2-linear-stop-animate--0 forwards;
+            animation-delay: .5s;
+        }
+
+        .linear-stop-animate--1 {
+            animation: 2s svg-2-linear-stop-animate--1 forwards;
+            animation-delay: .5s;
+        }
+    }
+}
+
+@keyframes svg-2-linear-stop-animate--0 {
+    0%, 50% {
+        stop-color: rgba(255,255,255,0.12);
+    }
+
+    100% {
+        stop-color: #577CFF;
+    }
+}
+@keyframes svg-2-linear-stop-animate--1 {
+    0%, 50% {
+        stop-color: rgba(255,255,255,0.12);
+    }
+
+    100% {
+        stop-color: #4CBFFF;
+    }
+}
+
+@keyframes svg-2-rect-animate {
+    0% {
+        width: 28px;
+        transform: translateX(-24px);
+        fill-opacity: 0.12;
+    }
+    
+    50% {
+        width: 52px;
+        transform: translateX(-24px);
+        fill-opacity: 0.12;
+    }
+
+    100% {
+        width: 28px;
+        transform: translateX(0);
+        fill-opacity: 1;
+    }
+}
+
+@keyframes svg-2-icon-animate {
+    0% {
+        transform: translateX(-24px);
+        fill: #fff;
+    }
+
+    50% {
+        transform: translateX(-12px);
+        fill: #fff;
+    }
+
+    100% {
+        transform: translateX(0);
+        fill: #43A1F7;
+    }
+}
+
+
+.block-utp--svg-3 .path-animate {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+}
+
+.block-utp--svg-3.animation .path-animate {
+    animation: 5s svg-3-path-animate forwards;
+    animation-delay: 1s;
+}
+
+@keyframes svg-3-path-animate {
+    from {
+        stroke-dashoffset: 1000;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}

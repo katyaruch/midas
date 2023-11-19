@@ -1,0 +1,113 @@
+.btn {
+  display: inline-block;
+  padding: 24px 48px;
+
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 133%;
+  letter-spacing: -0.016em;
+  text-decoration: none;
+  text-align: center;
+
+  color: #0A0C0F;
+  background: #FFFFFF;
+  border-radius: 24px;
+  transition: 0.4s;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.7);
+  }
+
+
+  &--size-s {
+    padding: 8px 16px;
+
+    font-size: 16px;
+    line-height: 150%;
+    border-radius: 12px;
+  }
+
+  &--blue {
+    font-weight: 600;
+    color: #FFFFFF;
+    background-image: linear-gradient(180deg,#46a5ff,#406aff);
+
+    &:hover {
+      background-image: linear-gradient(180deg,#46a5ff,#46a5ff);
+    }
+  }
+
+  &--gray {
+    width: 100%;
+    max-width: 480px;
+    height: 206px;
+    padding: 32px;
+
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 1;
+    letter-spacing: -0.032em;
+    text-align: left;
+    color: #FFFFFF;
+
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0px 40px 64px -30px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    
+    border-radius: 32px;
+    
+    &:hover {
+        background: radial-gradient(100% 100% at 50% 0%, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.128) 100%);
+        box-shadow: 0px 80px 160px -60px rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(12px);
+
+        transform: scale(1.05);
+    }
+
+    .btn-icon {
+      display: block;
+      max-width: 60px;
+      max-height: 60px;
+      margin-bottom: 50px;
+    }
+  }
+}
+        
+.btn-icon-arrow {
+  transform: translateY(10%);
+}
+
+
+@media (max-width: 576px) {
+
+  .btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 16px;
+
+    .btn-icon-arrow {
+      max-width: 16px;
+      max-height: 16px;
+    }
+  }
+
+  .btn--gray {
+    height: 132px;
+    padding: 24px 24px 18px;
+    font-size: 20px;
+    border-radius: 20px;
+
+    .btn-icon {
+      max-width: 40px;
+      max-height: 40px;
+      margin-bottom: 24px;
+    }
+
+    .btn-icon-arrow {
+      max-width: 20px;
+      max-height: 20px;
+    }
+  }
+}

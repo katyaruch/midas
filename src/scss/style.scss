@@ -1,0 +1,113 @@
+* {
+  box-sizing: border-box;
+}
+
+p {
+  // margin: 0;
+}
+
+body {
+  font-size: 16px;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  color: #fff;
+  font-weight: 500;
+  background-color: #181B20;
+}
+
+.sticky-top {
+  position: sticky;
+  top: 0;
+
+  z-index: 100;
+}
+
+.d-inline-block {
+  display: inline-block;
+}
+
+.screen {
+  position: relative;
+  min-height: 100vh;
+  padding: 120px 0;
+  margin-bottom: 4px;
+
+  background: #0A0C0F;
+  border-radius: 48px;
+  overflow: hidden;
+
+  &--first {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+  &:last-of-type {
+    margin-bottom: 1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+  
+.container {
+  position: relative;
+  
+  width: 100%;
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.block-main {
+  margin-bottom: 136px;
+}
+
+.block-buttons {
+  position: relative;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+@media (max-width: 576px) {
+
+  body {
+    font-size: 12px;
+  }
+  .screen {
+    // min-height: auto;
+    padding: 40px 0 20px;
+    border-radius: 20px;
+  }
+
+  .block-main {
+    margin-bottom: 64px;
+  }
+
+  .block-buttons {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+}
+
+@import "./tipography.scss";
+@import "./cards.scss";
+@import "./header.scss";
+
+@import "./dropdown.scss";
+@import "./button.scss";
+@import "./block-utp.scss";
+@import "./block-metrics.scss";
+@import "./block-stake.scss";
+@import "./block-utility.scss";
+@import "./block-support.scss";
+@import "./block-howbuy.scss";
+@import "./social-list.scss";
+@import "./faq-list.scss";
+
+@import "./footer.scss";

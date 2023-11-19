@@ -1,0 +1,169 @@
+.faq-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  
+    &__item {
+      position: relative;
+  
+      background: #181B20;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      border-radius: 24px;
+  
+      &:not(:last-child) {
+        margin-bottom: 16px;
+      }
+  
+      &::after {
+        content: "";
+  
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        
+        display: inline-block;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: #22252A url("../images/icons/chevron-down.svg") no-repeat center/24px;
+        transition: .6s;
+
+        cursor: pointer;
+        pointer-events: none;
+      }
+      
+      &.active::after {
+        transform: rotate(180deg);
+        background-color: #43A1F7;
+        box-shadow: 0px 12px 40px -12px rgba(67, 161, 247, 0.5), inset 0px 6px 16px rgba(255, 255, 255, 0.16);
+      }
+  
+      &.active {
+        border: 1px solid #43A1F7;
+      }
+  
+      &.active .faq-list__answer {
+        max-height: 1000px;
+        // height: 100%;
+        // padding: 24px;
+        // padding-bottom: 24px;
+          margin-bottom: 24px;
+      }
+    }
+  
+    &__question {
+      margin: 0;
+      padding: 24px;
+      
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 133%;
+      letter-spacing: -0.02em;
+  
+      cursor: pointer;
+    }
+  
+    &__answer {
+      // height: 0;
+      max-height: 0;
+      padding: 0 24px;
+      // padding-bottom: 24px;
+  
+      font-size: 20px;
+      line-height: 140%;
+      
+      overflow: hidden;
+      transition: 0.4s ease;
+  
+      p {
+        margin: 0;
+        color: hsla(0,0%,100%,.56);
+  
+        &:not(:last-child) {
+          margin-bottom: 16px;
+        }
+      }
+  
+      a {
+        // color: #ffffff;
+        // text-decoration: none;
+            
+        color: #43a1f7;
+        text-decoration: underline;
+      }
+  
+      ul {
+        padding-left: 32px;
+        list-style: none;
+      }
+  
+      ul li {
+        position: relative;
+  
+        font-weight: 500;
+        letter-spacing: -0.02em;
+        color: rgba(255,255,255, 0.36);
+  
+        &:not(:last-child) {
+          margin-bottom: 12px;
+        }
+      }
+  
+      ul li::before {
+        content: "";
+        position: absolute;
+        top: 8px;
+        left: -32px;
+  
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        margin-right: 20px;
+  
+        border-radius: 50%;
+        background: #43A1F7;
+        transition: 1s;
+      }
+    }
+  }
+
+  
+@media (max-width: 576px) {
+    
+  .faq-list {
+    &__item {
+      border-radius: 16px;
+    }
+    &__item::after {
+      top: 14px;
+      width: 24px;
+      height: 24px;
+
+      background-color: transparent;
+    }
+    &__item.active::after {
+      background-color: transparent;
+      box-shadow: none;
+    }
+    &__question {
+      padding: 14px 16px;
+      padding-right: 44px;
+      font-size: 16px;
+    }
+    &__answer {
+      padding: 0 16px;
+      font-size: 16px;
+    }
+    &__answer ul {
+      padding-left: 24px;
+    }
+    &__answer ul li::before {
+      width: 8px;
+      height: 8px;
+      left: -24px;
+    }
+    &__answer p:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
+}
